@@ -41,7 +41,7 @@
 <code>hexo deploy</code></p>
 <p>·博客主题与插件</p>
 <p>主题：NexT，在config里找对应的字段自己配</p>
-<p>装了挺多的，实际用的好像就一个加密= =</p>
+<p>插件：装了挺多的，目前实际用的好像就一个hexo-blog-encrypt加密= =</p>
 <p>±- chokidar@3.5.1<br>
 ±- hexo-blog-encrypt@3.1.6<br>
 ±- hexo-deployer-git@3.0.0<br>
@@ -64,7 +64,8 @@
 ±- hexo@5.4.0<br>
 `-- nunjucks@3.2.3</p>
 <p>评论系统:</p>
-<p>Gitment</p>
+<p>Gitalk</p>
+<p><s>因为大咕咕过于菜，整评论系统还把NexT整崩了一次，备份的习惯还是要养成一个</s></p>
 ]]></content>
       <tags>
         <tag>Blog</tag>

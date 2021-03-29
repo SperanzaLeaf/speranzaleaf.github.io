@@ -1,53 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Python摸鱼记录1-基础操作</title>
-    <url>/2021/03/29/14-58-17/</url>
-    <content><![CDATA[<p>大咕咕自学Python的小笔记</p>
-<span id="more"></span>
-<p>·存储方法</p>
-<p>全 是 对 象</p>
-<p>常量只会存一份，表示相同常量的标识符会都存在一个地址里</p>
-<p>·is和==</p>
-<p>is比地址，==比内容</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a=<span class="number">2</span></span><br><span class="line">b=<span class="number">2</span></span><br><span class="line"><span class="keyword">if</span> a <span class="keyword">is</span> b:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;yes&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;no&quot;</span>)</span><br><span class="line">a=[<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line">b=[<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line"><span class="keyword">if</span> a <span class="keyword">is</span> b:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;yes&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;no&quot;</span>)</span><br><span class="line">a=<span class="number">2</span></span><br><span class="line">b=<span class="number">2</span></span><br><span class="line"><span class="keyword">if</span> a == b:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;yes&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;no&quot;</span>)</span><br><span class="line">a=[<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line">b=[<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line"><span class="keyword">if</span> a == b:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;yes&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;no&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p>输出：<br>
-yes<br>
-no<br>
-yes<br>
-yes</p>
-<p>·import&amp;module</p>
-<p>python文件可以直接作为module来import</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> p <span class="keyword">as</span> m1 <span class="comment">#将p.py作为m1模块引入</span></span><br><span class="line"></span><br><span class="line">m1.f1() <span class="comment">#调用m1中的f1()函数</span></span><br></pre></td></tr></table></figure>
-<p>注意import时会同时解释并执行对应module里的所有代码,如果想要一些代码不执行，可以在它们前面加一行判断语句</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>: <span class="comment">#仅当模块名与当前正在解释的文件名相同时</span></span><br><span class="line">    <span class="comment">#code here</span></span><br></pre></td></tr></table></figure>
-<p>·切片</p>
-<p>s[a:b] #[a,b)<br>
-s[a:] #[a,len)<br>
-s[a::b] #a,a+b,a+2b… 隔着切<br>
-s[::b] #0,b,2b…<br>
-s[::-b] #len-1,len-1-b,len-1-2b… 倒着切<br>
-s[-a:-b] #[len-a,len-b)</p>
-<p>·OOP相关</p>
-<p>初始化</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">c</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,str1,str2</span>):</span></span><br><span class="line">        self.name=str1</span><br><span class="line">        self.ID=str2</span><br></pre></td></tr></table></figure>
-<p>@property和@attr.setter</p>
-<p>把方法变为属性</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class testc(object):</span><br><span class="line">    def __init__(self,str):</span><br><span class="line">        self.sname&#x3D;str</span><br><span class="line">        self.sid&#x3D;str+&quot;0&quot;</span><br><span class="line"></span><br><span class="line">    @property</span><br><span class="line">    def name(self):</span><br><span class="line">        return self.sname</span><br><span class="line"></span><br><span class="line">    @name.setter</span><br><span class="line">    def setid(self,str):</span><br><span class="line">        self.sid&#x3D;str+&quot;0&quot;</span><br><span class="line"></span><br><span class="line">c1&#x3D;testc(&quot;233&quot;)</span><br><span class="line">print(c1.name)</span><br><span class="line">c1.setid&#x3D;&quot;2333&quot;</span><br><span class="line">print(c1.sid)</span><br></pre></td></tr></table></figure>
-<p>输出：<br>
-233<br>
-23330</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">__slot__</span><br></pre></td></tr></table></figure>
-<p>限定对象可绑定的属性，不对子类的对象生效</p>
-<p>@staticmethod 静态方法<br>
-@classmethod 类方法 第一个参数名约定为cls，代表当前类相关信息的对象</p>
-<p>并没有好好学过OOP，不深入了</p>
-]]></content>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>大咕咕的新窝</title>
     <url>/2021/03/19/14-36-49/</url>
     <content><![CDATA[<span id="more"></span>
@@ -129,6 +82,53 @@ s[-a:-b] #[len-a,len-b)</p>
 ]]></content>
       <tags>
         <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python摸鱼记录1-基础操作</title>
+    <url>/2021/03/29/14-58-17/</url>
+    <content><![CDATA[<p>大咕咕自学Python的小笔记</p>
+<span id="more"></span>
+<p>·存储方法</p>
+<p>全 是 对 象</p>
+<p>一个常量只会存一份，表示相同常量的标识符都指在一个地址里(所以没有i++这种东西)</p>
+<p>·is和==</p>
+<p>is比地址，==比内容</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a=<span class="number">2</span></span><br><span class="line">b=<span class="number">2</span></span><br><span class="line"><span class="keyword">if</span> a <span class="keyword">is</span> b:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;yes&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;no&quot;</span>)</span><br><span class="line">a=[<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line">b=[<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line"><span class="keyword">if</span> a <span class="keyword">is</span> b:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;yes&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;no&quot;</span>)</span><br><span class="line">a=<span class="number">2</span></span><br><span class="line">b=<span class="number">2</span></span><br><span class="line"><span class="keyword">if</span> a == b:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;yes&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;no&quot;</span>)</span><br><span class="line">a=[<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line">b=[<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line"><span class="keyword">if</span> a == b:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;yes&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;no&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>输出：<br>
+yes<br>
+no<br>
+yes<br>
+yes</p>
+<p>·import&amp;module</p>
+<p>python文件可以直接作为module来import</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> p <span class="keyword">as</span> m1 <span class="comment">#将p.py作为m1模块引入</span></span><br><span class="line"></span><br><span class="line">m1.f1() <span class="comment">#调用m1中的f1()函数</span></span><br></pre></td></tr></table></figure>
+<p>注意import时会同时解释并执行对应module里的所有代码,如果想要一些代码不执行，可以在它们前面加一行判断语句</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>: <span class="comment">#仅当模块名与当前正在解释的文件名相同时</span></span><br><span class="line">    <span class="comment">#code here</span></span><br></pre></td></tr></table></figure>
+<p>·切片</p>
+<p>s[a:b] #[a,b)<br>
+s[a:] #[a,len)<br>
+s[a::b] #a,a+b,a+2b… 隔着切<br>
+s[::b] #0,b,2b…<br>
+s[::-b] #len-1,len-1-b,len-1-2b… 倒着切<br>
+s[-a:-b] #[len-a,len-b)</p>
+<p>·OOP相关</p>
+<p>初始化</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">c</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,str1,str2</span>):</span></span><br><span class="line">        self.name=str1</span><br><span class="line">        self.ID=str2</span><br></pre></td></tr></table></figure>
+<p>@property和@attr.setter</p>
+<p>把方法变为属性</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class testc(object):</span><br><span class="line">    def __init__(self,str):</span><br><span class="line">        self.sname&#x3D;str</span><br><span class="line">        self.sid&#x3D;str+&quot;0&quot;</span><br><span class="line"></span><br><span class="line">    @property</span><br><span class="line">    def name(self):</span><br><span class="line">        return self.sname</span><br><span class="line"></span><br><span class="line">    @name.setter</span><br><span class="line">    def setid(self,str):</span><br><span class="line">        self.sid&#x3D;str+&quot;0&quot;</span><br><span class="line"></span><br><span class="line">c1&#x3D;testc(&quot;233&quot;)</span><br><span class="line">print(c1.name)</span><br><span class="line">c1.setid&#x3D;&quot;2333&quot;</span><br><span class="line">print(c1.sid)</span><br></pre></td></tr></table></figure>
+<p>输出：<br>
+233<br>
+23330</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">__slot__</span><br></pre></td></tr></table></figure>
+<p>限定对象可绑定的属性，不对子类的对象生效</p>
+<p>@staticmethod 静态方法<br>
+@classmethod 类方法 第一个参数名约定为cls，代表当前类相关信息的对象</p>
+<p>并没有好好学过OOP，不深入了</p>
+]]></content>
+      <tags>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>

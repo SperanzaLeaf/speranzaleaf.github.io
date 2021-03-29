@@ -28,7 +28,7 @@
 <meta property="og:description" content="大咕咕自学Python的小笔记">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-29T06:58:17.000Z">
-<meta property="article:modified_time" content="2021-03-29T07:14:31.647Z">
+<meta property="article:modified_time" content="2021-03-29T08:13:18.234Z">
 <meta property="article:author" content="SperanzaLeaf">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
@@ -181,7 +181,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-03-29 14:58:17 / 修改时间：15:14:31" itemprop="dateCreated datePublished" datetime="2021-03-29T14:58:17+08:00">2021-03-29</time>
+              <time title="创建时间：2021-03-29 14:58:17 / 修改时间：16:13:18" itemprop="dateCreated datePublished" datetime="2021-03-29T14:58:17+08:00">2021-03-29</time>
             </span>
 
           
@@ -197,42 +197,44 @@
       
         <p>大咕咕自学Python的小笔记</p>
 <span id="more"></span>
+
 <p>·存储方法</p>
 <p>全 是 对 象</p>
-<p>一个常量只会存一份，表示相同常量的标识符都指在一个地址里(所以没有i++这种东西)</p>
+<p>=就是对对象指向的引用，是传址运算<br>一个常量(数，字符(串)，元组)只会存一份，表示相同常量的标识符都指在一个地址里(所以没有i++这种东西)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a=[<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">b=a</span><br><span class="line">b[<span class="number">0</span>]=<span class="number">2</span></span><br><span class="line"><span class="built_in">print</span>(a) <span class="comment">#[2, 2]</span></span><br></pre></td></tr></table></figure>
+
 <p>·is和==</p>
 <p>is比地址，==比内容</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="number">2</span></span><br><span class="line">b=<span class="number">2</span></span><br><span class="line"><span class="keyword">if</span> a <span class="keyword">is</span> b:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;yes&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;no&quot;</span>)</span><br><span class="line">a=[<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line">b=[<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line"><span class="keyword">if</span> a <span class="keyword">is</span> b:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;yes&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;no&quot;</span>)</span><br><span class="line">a=<span class="number">2</span></span><br><span class="line">b=<span class="number">2</span></span><br><span class="line"><span class="keyword">if</span> a == b:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;yes&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;no&quot;</span>)</span><br><span class="line">a=[<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line">b=[<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line"><span class="keyword">if</span> a == b:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;yes&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;no&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p>输出：<br>
-yes<br>
-no<br>
-yes<br>
-yes</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="number">2</span></span><br><span class="line">b=<span class="number">2</span></span><br><span class="line">a <span class="keyword">is</span> b <span class="comment">#true</span></span><br><span class="line">a == b <span class="comment">#true</span></span><br><span class="line"></span><br><span class="line">a=[<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line">b=[<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line">a <span class="keyword">is</span> b <span class="comment">#false  虽然引用的常量一样，但是这两个列表对象并不是同一个对象</span></span><br><span class="line">a == b <span class="comment">#true</span></span><br></pre></td></tr></table></figure>
+
+<p>·python允许比较运算符的连接</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="number">8</span>&gt;<span class="number">0</span>&lt;<span class="number">8</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;gugu&quot;</span>) <span class="comment">#gugu</span></span><br></pre></td></tr></table></figure>
+
+<p>·奇奇怪怪的逻辑运算</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">5</span> <span class="keyword">or</span> <span class="number">2</span>) <span class="comment">#5</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">2</span> <span class="keyword">or</span> <span class="number">5</span>) <span class="comment">#2</span></span><br></pre></td></tr></table></figure>
+
+<p>·real，imag 和 conjugate<br>字面意思</p>
 <p>·import&amp;module</p>
 <p>python文件可以直接作为module来import</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> p <span class="keyword">as</span> m1 <span class="comment">#将p.py作为m1模块引入</span></span><br><span class="line"></span><br><span class="line">m1.f1() <span class="comment">#调用m1中的f1()函数</span></span><br></pre></td></tr></table></figure>
+
 <p>注意import时会同时解释并执行对应module里的所有代码,如果想要一些代码不执行，可以在它们前面加一行判断语句</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>: <span class="comment">#仅当模块名与当前正在解释的文件名相同时</span></span><br><span class="line">    <span class="comment">#code here</span></span><br></pre></td></tr></table></figure>
+
 <p>·切片</p>
-<p>s[a:b] #[a,b)<br>
-s[a:] #[a,len)<br>
-s[a::b] #a,a+b,a+2b… 隔着切<br>
-s[::b] #0,b,2b…<br>
-s[::-b] #len-1,len-1-b,len-1-2b… 倒着切<br>
-s[-a:-b] #[len-a,len-b)</p>
+<p>s[a:b] #[a,b)<br>s[a:] #[a,len)<br>s[a::b] #a,a+b,a+2b…… 隔着切<br>s[::b] #0,b,2b……<br>s[::-b] #len-1,len-1-b,len-1-2b…… 倒着切<br>s[-a:-b] #[len-a,len-b) </p>
+<p>·strip<br>移除头尾字符</p>
 <p>·OOP相关</p>
-<p>初始化</p>
+<p>初始化  </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">c</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,str1,str2</span>):</span></span><br><span class="line">        self.name=str1</span><br><span class="line">        self.ID=str2</span><br></pre></td></tr></table></figure>
+
 <p>@property和@attr.setter</p>
 <p>把方法变为属性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class testc(object):</span><br><span class="line">    def __init__(self,str):</span><br><span class="line">        self.sname&#x3D;str</span><br><span class="line">        self.sid&#x3D;str+&quot;0&quot;</span><br><span class="line"></span><br><span class="line">    @property</span><br><span class="line">    def name(self):</span><br><span class="line">        return self.sname</span><br><span class="line"></span><br><span class="line">    @name.setter</span><br><span class="line">    def setid(self,str):</span><br><span class="line">        self.sid&#x3D;str+&quot;0&quot;</span><br><span class="line"></span><br><span class="line">c1&#x3D;testc(&quot;233&quot;)</span><br><span class="line">print(c1.name)</span><br><span class="line">c1.setid&#x3D;&quot;2333&quot;</span><br><span class="line">print(c1.sid)</span><br></pre></td></tr></table></figure>
-<p>输出：<br>
-233<br>
-23330</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">testc</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,<span class="built_in">str</span></span>):</span></span><br><span class="line">        self.sname=<span class="built_in">str</span></span><br><span class="line">        self.sid=<span class="built_in">str</span>+<span class="string">&quot;0&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">name</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self.sname</span><br><span class="line"></span><br><span class="line"><span class="meta">    @name.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setid</span>(<span class="params">self,<span class="built_in">str</span></span>):</span></span><br><span class="line">        self.sid=<span class="built_in">str</span>+<span class="string">&quot;0&quot;</span></span><br><span class="line"></span><br><span class="line">c1=testc(<span class="string">&quot;233&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(c1.name) <span class="comment">#233</span></span><br><span class="line">c1.setid=<span class="string">&quot;2333&quot;</span></span><br><span class="line"><span class="built_in">print</span>(c1.sid) <span class="comment">#23330</span></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__slot__</span><br></pre></td></tr></table></figure>
 <p>限定对象可绑定的属性，不对子类的对象生效</p>
-<p>@staticmethod 静态方法<br>
-@classmethod 类方法 第一个参数名约定为cls，代表当前类相关信息的对象</p>
+<p>@staticmethod 静态方法<br>@classmethod 类方法 第一个参数名约定为cls，代表当前类相关信息的对象</p>
 <p>并没有好好学过OOP，不深入了</p>
 
     </div>

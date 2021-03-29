@@ -9,6 +9,13 @@
   </url>
   
   <url>
+    <loc>http://speranzaleaf.github.io/2021/03/29/14-58-17/</loc>
+    
+    <lastmod>2021-03-29</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://speranzaleaf.github.io/2021/03/19/16-33-39/</loc>
     
     <lastmod>2021-03-29</lastmod>
@@ -37,6 +44,13 @@
     <priority>1.0</priority>
   </url>
 
+  
+  <url>
+    <loc>http://speranzaleaf.github.io/tags/python/</loc>
+    <lastmod>2021-03-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
   
   <url>
     <loc>http://speranzaleaf.github.io/tags/%E6%9D%82%E9%A1%B9/</loc>
